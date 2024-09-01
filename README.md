@@ -26,24 +26,16 @@ Styles the timeline, ensuring responsiveness and visual appeal, including transi
 
 ### index.js:
 Manages interactive elements:
-* #### showTime(event):
-  Reveals event details.
-* #### hideTime(event):
-  Hides event details.
-* #### slowLoop():
-  Automates timeline progression.
-* #### timelineProgress(value):
-  Updates visual progress.
-* #### IntersectionObserver:
-  Triggers animations as the user scrolls.
+* #### **showTime(event)**: Reveals event details.
+* #### **hideTime(event)**: Hides event details.
+* #### **slowLoop()**: Automates timeline progression.
+* #### **timelineProgress(value)**: Updates visual progress.
+* #### **IntersectionObserver**: Triggers animations as the user scrolls.
 
 #### Key Features:
-* #### Responsive Design:
-  Adapts to different screen sizes.
-* #### Interactive Elements:
-  Clickable events with automatic progression.
-* #### Smooth Animations:
-  Transition effects for a seamless user experience.
+* #### **Responsive Design**: Adapts to different screen sizes.
+* #### **Interactive Elements**: Clickable events with automatic progression.
+* #### **Smooth Animations**: Transition effects for a seamless user experience.
 
 ### References: 
 https://www.youtube.com/watch?v=yExvFZNYxcY, AI tool (ChatGPT)

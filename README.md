@@ -6,8 +6,14 @@
 
 ![Mobile Responsive View - 1](https://github.com/user-attachments/assets/efd8160b-a66b-40ee-9884-18ca9f533141)
 
+### Mobile Responsive:
+
 ![Mobile Responsive View - 2](https://github.com/user-attachments/assets/79997e5c-4253-402b-a052-97df474a6f80)
 
 ![Mobile Responsive View - 3](https://github.com/user-attachments/assets/c6f9461e-ecbf-4567-bfa4-884b522cbe3b)
 
 ![Mobile Responsive View - 4](https://github.com/user-attachments/assets/09b94a59-c467-4a10-96b7-d21a2d7235fd)
+
+### References: 
+
+https://www.youtube.com/watch?v=yExvFZNYxcY, AI tool (ChatGPT)

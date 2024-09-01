@@ -1,4 +1,4 @@
-### Responsive Horizontal / Vertical Timeline with animations using HTML, CSS and JavaScript
+### Responsive Horizontal / Vertical Timeline with interactive animations using HTML, CSS and JavaScript
 
 ![Laptop Browser View - 1](https://github.com/user-attachments/assets/1dfb2870-984f-4116-8215-df1930a8bcb7)
 

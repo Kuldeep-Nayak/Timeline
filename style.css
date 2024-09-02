@@ -13,6 +13,17 @@ body {
   line-height: 1.6; 
   background-color: #f9f9f9; 
   color: #333; 
+  background-image: url('./Images/Background Image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
 }
 
 .image-container {
@@ -42,6 +53,7 @@ body {
   font-size: 1rem; 
   max-width: 800px;
   margin: 0 auto;
+  color: #333; 
 }
 
 @media (max-width: 768px) {
@@ -74,12 +86,24 @@ li {
   padding: 25px;
   background-color: #fff; 
   border-radius: 8px; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2); 
 }
 
 li p {
-  padding: 0 20px;
-  transition: transform 1.5s, opacity 1.5s;
+  padding: 10px 20px; 
+  background-color: #f9f9f9; 
+  border-radius: 8px; 
+  transition: transform 1.5s, opacity 1.5s; 
+  max-width: 100%; 
+  margin: 0 auto; 
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); 
+}
+
+@media (max-width: 768px) {
+  li p {
+    font-size: 0.9rem; 
+    padding: 8px 16px; 
+  }
 }
 
 .date {
@@ -93,7 +117,7 @@ li p {
 }
 
 .timeline-line {
-  background: rgb(228, 228, 228);
+  background: #e0e0e0; 
   width: 4px;
   border-radius: 12px;
   position: relative;
@@ -103,7 +127,7 @@ li p {
 .timeline-point {
   position: absolute;
   border-radius: 50%;
-  background: rgb(228, 228, 228);
+  background: #007bff;
   width: 8px;
   height: 8px;
   top: 30px;
@@ -113,14 +137,13 @@ li p {
 
 .timeline-innerline {
   position: absolute;
-  background: blue;
+  background: #007bff;
   width: 4px;
   height: 0%;
   top: 0%;
   left: 0%;
   transition: height 1s linear, width 1s linear;
 }
-
 
 @media screen and (min-width: 728px) {
   .timeline {

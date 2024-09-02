@@ -2,7 +2,7 @@
 
 ### Desktop View:
 
-!
+
 
 ### Mobile View:
 

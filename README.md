@@ -14,26 +14,25 @@
 
 ![Mobile View - 3](https://github.com/user-attachments/assets/5bc3bb9f-f31c-4b5b-9cef-13748820d789)
 
-### Overview:
+### File Descriptions:
 
 ### index.html: 
-Defines the layout with a drone image, descriptive text, and a timeline section with clickable events.
+* Timeline Container: A div that houses all timeline events.
+* Event Items: Individual div elements for each event with clickable functionality.
+* Detail Display Area: A section where details about the clicked event are shown.
+* Script and Style Links: References to the index.css and index.js files for styling and functionality.
 
 ### style.css:
-Styles the timeline, ensuring responsiveness and visual appeal, including transitions and animations.
+* Layout Styling: Flexbox or Grid is used to create a responsive layout for the timeline and detail area.
+* Timeline Styles: Custom styles for the timeline, including event markers, lines, and hover effects.
+* Animations: CSS animations for transitions when moving between events manually or automatically.
+* Responsive Design: Media queries to adjust the layout for different screen sizes.
 
 ### index.js:
-Manages interactive elements:
-* #### **showTime(event)**: Reveals event details.
-* #### **hideTime(event)**: Hides event details.
-* #### **slowLoop()**: Automates timeline progression.
-* #### **timelineProgress(value)**: Updates visual progress.
-* #### **IntersectionObserver**: Triggers animations as the user scrolls.
-
-#### Key Features:
-* #### **Responsive Design**: Adapts to different screen sizes.
-* #### **Interactive Elements**: Clickable events with automatic progression.
-* #### **Smooth Animations**: Transition effects for a seamless user experience.
+* Event Listeners: Click events for each timeline event to display the corresponding details.
+* Animation Control: Functions to handle the animations for both manual and automatic progression.
+* State Management: Code to track the current active event and manage transitions smoothly.
+* Auto-Progress Feature: A function that automatically moves through the timeline events after a set interval.
 
 ### References: 
 https://www.youtube.com/watch?v=yExvFZNYxcY, AI tool (ChatGPT)

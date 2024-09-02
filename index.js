@@ -1,69 +1,97 @@
 const line = document.querySelector(".timeline-innerline");
-const timelineEvents = document.querySelectorAll("ul li");
+const timelineEvents = document.querySelectorAll(".timeline ul li");
 let currentIndex = 0, nextIndex = 1;
 
 function showTime(event) {
-  event.setAttribute("done", "true");
-  event.querySelector(".timeline-point").style.background = "blue";
-  event.querySelector(".date").style.opacity = "100%";
-  event.querySelector("p").style.opacity = "100%";
-  event.querySelector("p").style.transform = "translateY(0px)";
+  if (event) {
+    event.setAttribute("done", "true");
+
+    const timelinePoint = event.querySelector(".timeline-point");
+    const dateElement = event.querySelector(".date");
+    const paragraph = event.querySelector("p");
+
+    if (timelinePoint) timelinePoint.style.background = "blue";
+    if (dateElement) dateElement.style.opacity = "100%";
+    if (paragraph) {
+      paragraph.style.opacity = "100%";
+      paragraph.style.transform = "translateY(0px)";
+    }
+  }
 }
 
 function hideTime(event) {
-  event.removeAttribute("done");
-  event.querySelector(".timeline-point").style.background = "rgb(228, 228, 228)";
-  event.querySelector(".date").style.opacity = "0%";
-  event.querySelector("p").style.opacity = "0%";
-  event.querySelector("p").style.transform = "translateY(-10px)";
+  if (event) {
+    event.removeAttribute("done");
+
+    const timelinePoint = event.querySelector(".timeline-point");
+    const dateElement = event.querySelector(".date");
+    const paragraph = event.querySelector("p");
+
+    if (timelinePoint) timelinePoint.style.background = "rgb(228, 228, 228)";
+    if (dateElement) dateElement.style.opacity = "0%";
+    if (paragraph) {
+      paragraph.style.opacity = "0%";
+      paragraph.style.transform = "translateY(-10px)";
+    }
+  }
 }
 
 function slowLoop() {
   setTimeout(() => {
-    showTime(timelineEvents[currentIndex]);
-    timelineProgress(currentIndex + 1);
-    currentIndex++;
-    if (currentIndex < timelineEvents.length) slowLoop();
+    if (timelineEvents[currentIndex]) {
+      showTime(timelineEvents[currentIndex]);
+      timelineProgress(currentIndex + 1);
+      currentIndex++;
+      if (currentIndex < timelineEvents.length) slowLoop();
+    }
   }, 800);
 }
 
 function timelineProgress(value) {
-  const progress = `${(value / timelineEvents.length) * 100}%`;
-  const isWideScreen = window.matchMedia("(min-width: 728px)").matches;
-  if (isWideScreen) {
-    line.style.width = progress;
-    line.style.height = "4px";
-  } else {
-    line.style.height = progress;
-    line.style.width = "4px";
+  if (line) {
+    const progress = `${(value / timelineEvents.length) * 100}%`;
+    const isWideScreen = window.matchMedia("(min-width: 728px)").matches;
+    if (isWideScreen) {
+      line.style.width = progress;
+      line.style.height = "4px";
+    } else {
+      line.style.height = progress;
+      line.style.width = "4px";
+    }
   }
 }
 
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio > 0.9) {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+
         if (window.matchMedia("(min-width: 728px)").matches) {
           slowLoop();
         } else {
-          showTime(entry.target);
-          timelineProgress(nextIndex++);
+          if (target) {
+            showTime(target);
+            timelineProgress(nextIndex++);
+          }
         }
-        observer.unobserve(entry.target);
+        observer.unobserve(target);
       }
     });
   },
-  { threshold: 1, rootMargin: "0px 0px -50px 0px" }
+  { threshold: 0.9, rootMargin: "0px 0px -50px 0px" }
 );
 
 const timelineList = document.querySelector(".timeline ul");
 const timelineItems = document.querySelectorAll(".timeline ul li");
 const isWideScreen = window.matchMedia("(min-width: 728px)").matches;
 
-if (isWideScreen) {
-  observer.observe(timelineList);
-} else {
-  timelineItems.forEach((item) => observer.observe(item));
+if (timelineList) {
+  if (isWideScreen) {
+    observer.observe(timelineList);
+  } else {
+    timelineItems.forEach((item) => observer.observe(item));
+  }
 }
 
 timelineEvents.forEach((item, index) => {

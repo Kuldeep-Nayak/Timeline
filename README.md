@@ -36,5 +36,9 @@ This project is an Interactive Timeline that provides a dynamic way to display a
 * **State Management**: Code to track the current active event and manage transitions smoothly.
 * **Auto-Progress Feature**: A function that automatically moves through the timeline events after a set interval.
 
+The media news of IG Drones is displayed on a timeline organized by year.
+
+Official Website of IG Drones: https://igdrones.com
+
 ### References: 
 https://www.youtube.com/watch?v=yExvFZNYxcY, AI tool (ChatGPT)

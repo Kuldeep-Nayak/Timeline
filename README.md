@@ -37,7 +37,6 @@ This project is an Interactive Timeline that provides a dynamic way to display a
 * **Auto-Progress Feature**: A function that automatically moves through the timeline events after a set interval.
 
 The media news of IG Drones is displayed on a timeline organized by year.  
-This assignment was given to us during the practice school selection process at IG Drones.
 
 Official Website of IG Drones: https://igdrones.com
 
